@@ -2,6 +2,8 @@
 
 https://kingsofwartools.github.io/listbuilder
 
+Should run `npm run dev -- --host 0.0.0.0 --port 3000` to see the test server.
+
 This app lets you create lists for Kings of War version 3, with Clash of Kings 2022 and FAQ 1.14 updates.
 
 *The project is no longer maintained. If you would like to take ownership of the project please reach out.*

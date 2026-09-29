@@ -1,9 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+// @vitest-environment jsdom
+// @vitest-environment-options { "url": "http://localhost/listbuilder/" }
+import { render, screen, waitFor } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  it('renders the Kings of War listbuilder landing page', async () => {
+    render(<App />);
+    await waitFor(
+      () =>
+        expect(
+          screen.getByText(
+            /This listbuilder contains units available in Kings of War/i
+          )
+        ).toBeInTheDocument()
+    );
+  });
 });

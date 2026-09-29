@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { createElement } from 'react';
+import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// The entry module must stay JSX-free: Vite parses it directly (to inline
+// asset refs) before any JSX transform can run. Everything with JSX lives in
+// App.js and below, which esbuild transforms with the jsx loader.
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+root.render(createElement(React.StrictMode, null, createElement(App)));

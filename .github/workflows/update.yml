@@ -16,10 +16,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 22.x
 
       - name: Delete /docs folder
-        run: yarn delete-docs
+        run: npm run delete-docs
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
@@ -33,13 +33,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: yarn
+        run: npm ci --engine-strict=false
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Copy build to /docs
-        run: yarn copy-build
+        run: npm run copy-build
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
