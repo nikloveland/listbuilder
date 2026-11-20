@@ -1,5 +1,5 @@
 @import './App.scss';
-@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html,
@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  font-family: 'Helvetica Neue', 'Open Sans', 'Droid Sans', 'Arial', sans-serif;
+  font-family: 'Arimo', 'Open Sans', 'Droid Sans', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

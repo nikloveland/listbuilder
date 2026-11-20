@@ -20,7 +20,7 @@ const FormationDisplay = ({
   }, 0);
   return (
     <div className="formation" key={formationName}>
-      <Row className="formation__formation-header" noGutters>
+      <Row className="formation__formation-header g-0">
         <div className="formation__formation-text-container">
           <p className="formation__formation-name">{formationName} <span className="formation__formation-cost">({formationUnits.reduce((totalCost, { unitCost }) => totalCost + unitCost, 0)}pts)</span></p>
         </div>
