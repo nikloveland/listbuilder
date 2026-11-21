@@ -3,6 +3,20 @@
     display: flex;
     justify-content: flex-end;
   }
+  // Every unit in the list renders its own table, so pin the column widths to
+  // keep the first column (and therefore all the others) the same width across
+  // every table.
+  .unit-table {
+    table-layout: fixed;
+    th:first-child,
+    td:first-child {
+      width: 120px;
+    }
+    th:not(:first-child),
+    td:not(:first-child) {
+      width: 60px;
+    }
+  }
   &__header {
     padding: 0 0.5rem 1rem;
     display: flex;

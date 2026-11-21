@@ -40,6 +40,9 @@ export const ExportModal = ({ exportElement, pdfTitle, onHide, ...otherProps }) 
     // into its own container, and a fixed-position root would collapse to zero
     // height there. We only need it measurable, so it can sit in-flow off to the side.
     containerEl.style.cssText = `position:relative; width:${innerWidthPx}px; background:#fff;`;
+    // The clones lose their .army-list ancestor, so restore the class to keep
+    // the list-scoped styles (e.g. pinned unit-table column widths) applying.
+    containerEl.className = 'army-list';
     document.body.appendChild(containerEl);
 
     // Flatten the list into atomic, displayable blocks. The units are nested inside
